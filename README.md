@@ -1,32 +1,42 @@
-# Set Operations GUI Tool
+# Set Operations Web App 🌐
 
-A Python-based GUI application that performs basic set operations such as **Union**, **Intersection**, **Difference**, and **Symmetric Difference** using user input.
+A web-based tool to perform **set operations** — Union, Intersection, Difference, and Symmetric Difference — using a clean and interactive interface built with HTML, CSS, and JavaScript.
 
-## 🧠 Project Overview
+## 📘 Project Description
 
-This tool was developed to help users visualize and understand the fundamental concepts of set theory in an interactive and beginner-friendly way using Python and Tkinter.
+This application allows users to input two sets and perform standard operations to understand and visualize the results. It's perfect for students, educators, and developers learning set theory or JavaScript basics.
 
 ## 🚀 Features
 
-- Easy-to-use graphical user interface (GUI)
-- Input two sets as space-separated numbers
-- Perform and view:
+- Responsive and simple UI
+- Input two sets (space-separated values)
+- Supports:
   - Union
   - Intersection
   - Difference (A - B and B - A)
   - Symmetric Difference
-- Real-time results displayed in a text area
+- Instant display of results
+- No backend needed — runs fully in the browser
 
-## 💻 Technologies Used
+## 🛠️ Technologies Used
 
-- **Language**: Python
-- **GUI Framework**: Tkinter
-- **IDE**: Visual Studio Code
+- **HTML5**: Structure
+- **CSS3**: Styling and layout
+- **JavaScript**: Logic and interactivity
 
+## 📷 Screenshots
 
-## 🛠 How to Run
+*(Add relevant screenshots here, for example in a `screenshots/` folder)*
 
-1. Clone the repository:
+| Operation | Example |
+|----------|---------|
+| Intersection | ![Intersection](screenshots/intersection.png) |
+| Union | ![Union](screenshots/union.png) |
+
+## ▶️ How to Run
+
+1. Download or clone the repository:
    ```bash
-   git clone https://github.com/your-username/set-operations-gui.git
-   cd set-operations-gui
+   git clone https://github.com/your-username/set-operations-web.git
+   cd set-operations-web
+
