@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Set Operations Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+    input {
+      margin: 10px;
+      padding: 8px;
+      width: 300px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Set Operations Tool</h1>
+
+  <input id="setA" type="text" placeholder="Enter Set A (e.g., 1 2 3)">
+  <br>
+  <input id="setB" type="text" placeholder="Enter Set B (e.g., 2 3 4)">
+  <br>
+
+  <button onclick="performOperation('union')">Union</button>
+  <button onclick="performOperation('intersection')">Intersection</button>
+  <button onclick="performOperation('difference')">Difference (A - B)</button>
+  <button onclick="performOperation('symmetric')">Symmetric Difference</button>
+
+  <div id="result"></div>
+  <script>
+    function parseInput(input) {
+      return new Set(input.trim().split(/\s+/).map(Number).filter(n => !isNaN(n)));
+    }
+  
+    function setToString(set) {
+      return `{ ${[...set].sort((a, b) => a - b).join(', ')} }`;
+    }
+  
+    function performOperation(type) {
+      const A = parseInput(document.getElementById("setA").value);
+      const B = parseInput(document.getElementById("setB").value);
+      let resultText = "";
+  
+      if (type === 'union') {
+        const result = new Set([...A, ...B]);
+        resultText = `<strong>Union:</strong> ${setToString(result)}`;
+      } 
+      else if (type === 'intersection') {
+        const result = new Set([...A].filter(x => B.has(x)));
+        resultText = `<strong>Intersection:</strong> ${setToString(result)}`;
+      } 
+      else if (type === 'difference') {
+        const diffAB = new Set([...A].filter(x => !B.has(x)));
+        const diffBA = new Set([...B].filter(x => !A.has(x)));
+        resultText = `
+          <strong>Difference A - B:</strong> ${setToString(diffAB)}<br>
+          <strong>Difference B - A:</strong> ${setToString(diffBA)}
+        `;
+      } 
+      else if (type === 'symmetric') {
+        const symDiff = new Set([...A, ...B].filter(x => !(A.has(x) && B.has(x))));
+        resultText = `<strong>Symmetric Difference:</strong> ${setToString(symDiff)}`;
+      }
+  
+      document.getElementById("result").innerHTML = resultText;
+    }
+  </script>
+  
+
+</body>
+</html>
