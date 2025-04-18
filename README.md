@@ -24,14 +24,6 @@ This application allows users to input two sets and perform standard operations 
 - **CSS3**: Styling and layout
 - **JavaScript**: Logic and interactivity
 
-## 📷 Screenshots
-
-*(Add relevant screenshots here, for example in a `screenshots/` folder)*
-
-| Operation | Example |
-|----------|---------|
-| Intersection | ![Intersection](screenshots/intersection.png) |
-| Union | ![Union](screenshots/union.png) |
 
 ## ▶️ How to Run
 
